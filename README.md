@@ -56,6 +56,6 @@ Este projeto é licenciado sob a [MIT License](LICENSE). Sinta-se à vontade par
 
 ## Contato
 
-Em caso de dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento pelo email: [email protected]
+Em caso de dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento pelo email: periclesjeremias@gmail.com, moraisdenis123@gmail.com.
 
 Esperamos que este projeto seja útil e contribua para o seu aprendizado e desenvolvimento de aplicativos mobile similares ao Uber.
