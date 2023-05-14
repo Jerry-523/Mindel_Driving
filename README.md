@@ -49,7 +49,25 @@ Se você deseja contribuir para este projeto, siga as diretrizes abaixo:
 4. Envie um pull request para revisão.
 
 5. Aguarde a revisão e feedback da equipe de desenvolvimento.
+## To do
 
+### Register/Login
+
+- [ ] Logotipo
+
+- [ ] Banco de dados
+
+### Escolha do tipo servico
+
+- [ ] Escolha do tipo de servico
+
+### Solicitacao
+
+- [ ] Solicitar corrida
+
+### Integracao com o GPS
+
+- [ ] Integracao com API de Google Maps
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para utilizar e modificar o código de acordo com as necessidades do seu projeto.
