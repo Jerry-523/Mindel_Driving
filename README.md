@@ -51,6 +51,12 @@ Se você deseja contribuir para este projeto, siga as diretrizes abaixo:
 5. Aguarde a revisão e feedback da equipe de desenvolvimento.
 ## To do
 
+### Design
+
+- [x] Baixa fidelidade
+
+- [x] Alta fidelidade
+
 ### Register/Login
 
 - [ ] Logotipo
