@@ -59,9 +59,13 @@ Se você deseja contribuir para este projeto, siga as diretrizes abaixo:
 
 ### Register/Login
 
-- [ ] Logotipo
+- [x] Logotipo
 
-- [ ] Banco de dados
+- [x] Tela de registro
+
+- [x] Tela de Login
+
+- [x] Banco de dados
 
 ### Escolha do tipo servico
 
