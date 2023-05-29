@@ -2,5 +2,207 @@
     <string name="app_name">Mindel Driving</string>
     <string name="latitude">Latitude:</string>
     <string name="longitude">Longitude:</string>
-    <string name="title_activity_driver_maps">DriverMapsActivity</string>
+    <string name="title_activity_driver_maps">Mindel Driving</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="style_json">
+  [
+        {
+        \elementType\: \"geometry\",
+        \stylers\: [{\color\: \"#242f3e"\}]
+        },
+        {
+        \elementType\: \"labels.text.stroke\",
+        \stylers\: [{\color\: \"#242f3e"\}]
+        },
+        {
+        \elementType\: \"labels.text.fill\",
+        \stylers\: [{\color\: \"#746855"\}]
+        },
+    {
+        \"featureType\": \"all\",
+        \"elementType\": \"labels\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"administrative\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            },
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"landscape\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.attraction\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.business\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.government\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#dfdcd5\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.medical\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#dfdcd5\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.park\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#bad294\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.place_of_worship\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.school\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"poi.sports_complex\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#efebe2\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.highway\",
+        \"elementType\": \"geometry.fill\",
+        \"stylers\": [
+            {
+                \"color\": \"#ffffff\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.highway\",
+        \"elementType\": \"geometry.stroke\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.arterial\",
+        \"elementType\": \"geometry.fill\",
+        \"stylers\": [
+            {
+                \"color\": \"#ffffff\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.arterial\",
+        \"elementType\": \"geometry.stroke\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.local\",
+        \"elementType\": \"geometry.fill\",
+        \"stylers\": [
+            {
+                \"color\": \"#fbfbfb\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"road.local\",
+        \"elementType\": \"geometry.stroke\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"transit\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"visibility\": \"on\"
+            }
+        ]
+    },
+    {
+        \"featureType\": \"water\",
+        \"elementType\": \"all\",
+        \"stylers\": [
+            {
+                \"color\": \"#a5d7e0\"
+            }
+        ]
+    }
+]
+
+  </string>
 </resources>
