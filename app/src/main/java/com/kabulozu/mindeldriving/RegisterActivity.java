@@ -141,6 +141,20 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d("db_error", "Erro ao salvar os dados" + e.toString());
             }
         });
+
+        DocumentReference documentReference2 = db.collection("driverAvailable").document(usuarioID);
+        documentReference2.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                        Log.d("db", "Sucesso ao salvar dados");
+                    }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("db_error", "Erro ao salvar os dados" + e.toString());
+            }
+        });
     }
     private void IniciarComponentes(){
         edit_nome = findViewById(R.id.nomeRegister);
