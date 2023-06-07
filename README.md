@@ -69,7 +69,7 @@ Se você deseja contribuir para este projeto, siga as diretrizes abaixo:
 
 ### Escolha do tipo servico
 
-- [ ] Escolha do tipo de servico
+- [x] Escolha do tipo de servico
 
 ### Solicitacao
 
