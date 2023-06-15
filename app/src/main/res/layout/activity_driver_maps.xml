@@ -28,42 +28,133 @@ tools:ignore="HardcodedText">
 
         </androidx.appcompat.widget.Toolbar>
 
-        <fragment
+        <LinearLayout
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".DriverMapActivity"
-            tools:ignore="FragmentTagUsage" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            tools:ignore="FragmentTagUsage" >
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="93dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="226dp"
+                android:layout_marginBottom="615dp"
+                android:background="@drawable/principal"
+                android:drawableLeft="@drawable/baseline_my_location_24"
+                android:foregroundGravity="left"
+                android:freezesText="false"
+                android:paddingLeft="20dp"
+                android:text="Localização"
+                android:textColor="@color/white"
+                android:translationX="20dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/baseline_my_location_24" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/baseline_my_location_24" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/status_bar_item_app_background" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/background" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/status_bar_item_app_background" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/status_bar_item_background" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/baseline_location_on_24" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/baseline_location_on_24" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/star_big_on" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/status_bar_item_app_background" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_marginStart="92dp"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="55dp"
             android:layout_marginTop="132dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginBottom="575dp"
-            android:background="@color/cardview_dark_background"
+            android:layout_marginEnd="135dp"
 
+            android:layout_marginBottom="575dp"
+            android:background="@drawable/principal"
+            android:drawableLeft="@drawable/baseline_location_on_24"
+            android:paddingStart="20dp"
+            android:paddingLeft="25dp"
+            android:paddingEnd="40dp"
             android:text="Destino"
             android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="92dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginBottom="615dp"
-            android:background="@color/cardview_dark_background"
-            android:text="Localizacao"
-            android:textColor="@color/white"
+            android:translationX="60dp"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -74,9 +165,9 @@ tools:ignore="HardcodedText">
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="323dp"
+            android:layout_marginEnd="349dp"
             android:layout_marginBottom="683dp"
-            android:text="Button" />
+            android:background="@drawable/baseline_menu_24" />
 
     </RelativeLayout>
 
