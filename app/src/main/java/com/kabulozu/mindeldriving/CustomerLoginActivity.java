@@ -32,7 +32,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         firebaseAuthListener = firebaseAuth -> {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if(user!=null){
-                Intent intent = new Intent(CustomerLoginActivity.this, DriverMapActivity.class);
+                Intent intent = new Intent(CustomerLoginActivity.this, CustomerMapActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -57,13 +57,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                 }
             });
         });
-        /*
-        mRegistration.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startActivity(new Intent(CustomerLoginActivity.this,RegisterActivity.class));
-            }
-        });*/
+
         mLogin.setOnClickListener(view -> {
             final String email = mEmail.getText().toString();
             final String password = mPassword.getText().toString();
