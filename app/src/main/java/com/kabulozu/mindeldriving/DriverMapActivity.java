@@ -8,9 +8,9 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,7 +51,6 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
     GoogleApiClient zGoogleApiClient;
     Location zLastLocation;
     LocationRequest zLocationRequest;
-    private Button mlogout;
     private FusedLocationProviderClient zFusedLocationClient;
 
     @Override
@@ -75,26 +74,56 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
                 .findFragmentById(R.id.map);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
-        mlogout = (Button) findViewById(R.id.logout);
-        mlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.nav_perfil:
+                Intent perfil = new Intent(DriverMapActivity.this, Perfil.class);
+                startActivity(perfil);
+                finish();
+                // Perform action for "Perfil" menu item
+
+            case R.id.nav_mensagens:
+                // Perform action for "Mensagens" menu item
+                Intent mensagem = new Intent(DriverMapActivity.this, Mensagens.class);
+                startActivity(mensagem);
+                finish();
+
+            case R.id.nav_favoritos:
+                // Perform action for "Favoritos" menu item
+                Intent favoritos = new Intent(DriverMapActivity.this, Favoritos.class);
+                startActivity(favoritos);
+                finish();
+            case R.id.nav_settings:
+                // Perform action for "Settings" menu item
+                Intent definicao = new Intent(DriverMapActivity.this, Definicao.class);
+                startActivity(definicao);
+                finish();
+
+            case R.id.nav_logout:
+                // Perform action for "Logout" menu item
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(DriverMapActivity.this, ChooseActivity.class);
                 startActivity(intent);
                 finish();
-                return;
-            }
-        });
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
+
 
     @SuppressLint("ObsoleteSdkInt")
     @Override
