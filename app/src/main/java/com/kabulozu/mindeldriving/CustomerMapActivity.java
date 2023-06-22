@@ -8,6 +8,8 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
+import com.firebase.geofire.GeoQuery;
+import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -39,6 +43,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -77,41 +82,115 @@ public class CustomerMapActivity extends AppCompatActivity implements OnMapReady
                 .findFragmentById(R.id.map);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
-        mLogout = (Button) findViewById(R.id.logout);
-        mLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(CustomerMapActivity.this, ChooseActivity.class);
-                startActivity(intent);
-                finish();
-                return;
-            }
-        });
+
 
         mRequest = (Button) findViewById(R.id.request);
         mRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customerRequest");
                 GeoFire geoFire = new GeoFire(ref);
                 geoFire.setLocation(userId, new GeoLocation(zLastLocation.getLatitude(), zLastLocation.getLongitude()));
 
                 pickupLocation = new LatLng(zLastLocation.getLatitude(), zLastLocation.getLongitude());
                 zMap.addMarker(new MarkerOptions().position(pickupLocation).title("Preciso de um Motorista"));
-                
+
                 mRequest.setText("Esperando motorista...");
+
+                getClosestDriver();
             }
         });
     }
-
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.nav_perfil:
+                Intent perfil = new Intent(CustomerMapActivity.this, Perfil.class);
+                startActivity(perfil);
+                finish();
+                // Perform action for "Perfil" menu item
+
+
+            case R.id.nav_mensagens:
+                // Perform action for "Mensagens" menu item
+                Intent mensagem = new Intent(CustomerMapActivity.this, Mensagens.class);
+                startActivity(mensagem);
+                finish();
+            case R.id.nav_favoritos:
+                // Perform action for "Favoritos" menu item
+                Intent favoritos = new Intent(CustomerMapActivity.this, Favoritos.class);
+                startActivity(favoritos);
+                finish();
+            case R.id.nav_settings:
+                // Perform action for "Settings" menu item
+                Intent definicao = new Intent(CustomerMapActivity.this, Definicao.class);
+                startActivity(definicao);
+                finish();
+
+            case R.id.nav_logout:
+                // Perform action for "Logout" menu item
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(CustomerMapActivity.this, ChooseActivity.class);
+                startActivity(intent);
+                finish();
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    private int radius = 1;
+    private  Boolean driverFound = false;
+    private String driverFoundID;
+    private void getClosestDriver(){
+        DatabaseReference driverLocation = FirebaseDatabase.getInstance().getReference().child("DriverAvailable");
+
+        GeoFire geoFire = new GeoFire(driverLocation);
+        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(pickupLocation.latitude, pickupLocation.longitude), radius);
+        geoQuery.removeAllListeners();
+
+        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
+            @Override
+            public void onKeyEntered(String key, GeoLocation location) {
+                if(!driverFound){
+                    driverFound = true;
+                    driverFoundID = key;
+                }
+
+            }
+
+            @Override
+            public void onKeyExited(String key) {
+
+            }
+
+            @Override
+            public void onKeyMoved(String key, GeoLocation location) {
+
+            }
+
+            @Override
+            public void onGeoQueryReady() {
+                if (!driverFound){
+                    radius++;
+                    getClosestDriver();
+                }
+            }
+
+            @Override
+            public void onGeoQueryError(DatabaseError error) {
+
+            }
+        });
     }
 
     @SuppressLint("ObsoleteSdkInt")
