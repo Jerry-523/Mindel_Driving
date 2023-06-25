@@ -73,11 +73,11 @@ Se você deseja contribuir para este projeto, siga as diretrizes abaixo:
 
 ### Solicitacao
 
-- [ ] Solicitar corrida
+- [x] Solicitar corrida
 
 ### Integracao com o GPS
 
-- [ ] Integracao com API de Google Maps
+- [x] Integracao com API de Google Maps
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para utilizar e modificar o código de acordo com as necessidades do seu projeto.
@@ -86,4 +86,3 @@ Este projeto é licenciado sob a [MIT License](LICENSE). Sinta-se à vontade par
 
 Em caso de dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento pelo email: periclesjeremias@gmail.com, moraisdenis123@gmail.com.
 
-Esperamos que este projeto seja útil e contribua para o seu aprendizado e desenvolvimento de aplicativos mobile similares ao Uber.
