@@ -3,6 +3,7 @@
 # Projeto do Aplicativo Mobile Similar ao Uber
 
 Este é um projeto de um aplicativo mobile desenvolvido em Java utilizando o Android Studio. O objetivo do projeto é criar um aplicativo que ofereça serviços de compartilhamento de caronas, semelhante ao Uber.
+![logo1](https://user-images.githubusercontent.com/92488227/234706002-ee83bf00-a27d-4d66-b0ab-3dd95bf274bf.png)
 
 ## Funcionalidades
 
